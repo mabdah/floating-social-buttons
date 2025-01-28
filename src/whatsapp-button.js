@@ -13,12 +13,12 @@ function initializeWhatsAppButton(buttonId, phoneNumber, message = '') {
 
     // Dynamically add Font Awesome stylesheet to the page
     const img = document.createElement('img');
-    img.src = "https://cdn-icons-png.flaticon.com/512/174/174879.png"
+    img.src = "https://freepnglogo.com/images/all_img/1716574719whatsapp-logo-transparent.png"
     document.head.appendChild(img);
 
     // Add styles directly to the button
     // whatsappButton.style.padding = '10px 20px';
-    whatsappButton.style.backgroundColor = '#ffffff';  // WhatsApp green color
+    // whatsappButton.style.backgroundColor = '#ffffff';  // WhatsApp green color
     whatsappButton.style.color = '#fff';
     whatsappButton.style.border = 'none';
     // whatsappButton.style.borderRadius = '5px';
