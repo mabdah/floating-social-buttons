@@ -1,0 +1,23 @@
+{
+  "name": "whatsapp-button",
+  "version": "1.0.0",
+  "description": "Whatsapp redirectio button",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mabdah/whatsapp-button.git"
+  },
+  "keywords": [
+    "whatsapp"
+  ],
+  "author": "Mabisha Dahal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mabdah/whatsapp-button/issues"
+  },
+  "homepage": "https://github.com/mabdah/whatsapp-button#readme"
+}
