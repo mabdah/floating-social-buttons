@@ -1,5 +1,5 @@
 {
-  "name": "@whatsapp-redirect/whatsapp-button",
+  "name": "@mabis/whatsapp-button",
   "version": "1.0.0",
   "description": "Whatsapp redirectio button",
   "main": "index.js",
