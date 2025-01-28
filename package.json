@@ -1,5 +1,5 @@
 {
-  "name": "@mabisha/whatsapp-button",
+  "name": "open-whatsapp",
   "version": "1.0.0",
   "description": "Whatsapp redirectio button",
   "main": "index.js",
