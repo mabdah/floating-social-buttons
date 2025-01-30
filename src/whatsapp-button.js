@@ -1,9 +1,4 @@
-/**
- * Initialize WhatsApp Button with styles and logo
- * @param {string} buttonId - The ID of the button element.
- * @param {string} phoneNumber - WhatsApp phone number (international format without + or leading zeros).
- * @param {string} message - Pre-filled message for WhatsApp.
- */
+
 function initializeWhatsAppButton(buttonId, phoneNumber, message = '') {
     const whatsappButton = document.getElementById(buttonId);
     if (!whatsappButton) {
@@ -11,29 +6,12 @@ function initializeWhatsAppButton(buttonId, phoneNumber, message = '') {
         return;
     }
 
-    // Dynamically add Font Awesome stylesheet to the page
     const img = document.createElement('img');
     img.src = "https://freepnglogo.com/images/all_img/1716574719whatsapp-logo-transparent.png"
-    document.head.appendChild(img);
-
-    // Add styles directly to the button
-    // whatsappButton.style.padding = '10px 20px';
-    // whatsappButton.style.backgroundColor = '#ffffff';  // WhatsApp green color
     whatsappButton.style.color = '#fff';
     whatsappButton.style.border = 'none';
-    // whatsappButton.style.borderRadius = '5px';
-    // whatsappButton.style.fontSize = '5px';
     whatsappButton.style.cursor = 'pointer';
-    // whatsappButton.style.display = 'flex';
-    // whatsappButton.style.alignItems = 'center';  // Align logo and text horizontally
-    // whatsappButton.style.fontWeight = 'bold';
     img.style.width = "38px"
-
-    // Create WhatsApp logo element using Font Awesome
-    // const logo = document.createElement('i');
-    // logo.classList.add('fab', 'fa-whatsapp');
-    // logo.style.marginRight = '10px';  // Space between logo and text
-    // logo.style.fontSize = '20px';  // Adjust size of the logo
 
     // Add logo to the button
     whatsappButton.insertBefore(img, whatsappButton.firstChild);
@@ -46,5 +24,28 @@ function initializeWhatsAppButton(buttonId, phoneNumber, message = '') {
         window.open(whatsappURL, '_blank');
     };
 }
+function initializeMessengarButton(buttonId, pageName, message = "") {
+    const messengerButton = document.getElementById(buttonId)
+    if (!messengerButton) {
+        console.error(`Button with ID "${buttonId}" not found!`);
+        return;
+    }
+    const img = document.createElement('img')
+    img.src = "https://1000logos.net/wp-content/uploads/2021/11/Messenger-Logo-500x281.png"
+    messengerButton.style.color = '#fff';
+    messengerButton.style.border = 'none';
+    messengerButton.style.cursor = 'pointer';
+    img.style.width = "38px"
 
-export default initializeWhatsAppButton;
+    messengerButton.insertBefore(img, messengerButton.firstChild);
+
+    const messengerURL = `https://m.me/${pageName}?text=${encodeURIComponent(message)}`;
+
+    // Add click functionality
+    messengerButton.onclick = function () {
+        window.open(messengerURL, '_blank');
+    };
+
+
+}
+export default { initializeWhatsAppButton, initializeMessengarButton };
