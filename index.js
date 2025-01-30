@@ -1,3 +1,3 @@
-import { initializeWhatsAppButton, initializeMessengarButton } from "./src/whatsapp-button.js"
+import { initializeWhatsAppButton, initializeMessengerButton } from "./src/whatsapp-button.js"
 
-export { initializeWhatsAppButton, initializeMessengarButton };
+export { initializeWhatsAppButton, initializeMessengerButton };

@@ -24,7 +24,7 @@ function initializeWhatsAppButton(buttonId, phoneNumber, message = '') {
         window.open(whatsappURL, '_blank');
     };
 }
-function initializeMessengarButton(buttonId, pageName, message = "") {
+function initializeMessengerButton(buttonId, pageName, message = "") {
     const messengerButton = document.getElementById(buttonId)
     if (!messengerButton) {
         console.error(`Button with ID "${buttonId}" not found!`);
@@ -48,4 +48,4 @@ function initializeMessengarButton(buttonId, pageName, message = "") {
 
 
 }
-export default { initializeWhatsAppButton, initializeMessengarButton };
+export default { initializeWhatsAppButton, initializeMessengerButton };
