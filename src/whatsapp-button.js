@@ -35,7 +35,7 @@ export function initializeMessengerButton(buttonId, pageName, message = "") {
     messengerButton.style.color = '#fff';
     messengerButton.style.border = 'none';
     messengerButton.style.cursor = 'pointer';
-    img.style.width = "38px"
+    img.style.width = "58px"
 
     messengerButton.insertBefore(img, messengerButton.firstChild);
 
