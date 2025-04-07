@@ -1,51 +1,56 @@
+function createFloatingButton(buttonId, imgSrc, altText, url, bgColor) {
+    // If already exists, don't create again
+    if (document.getElementById(buttonId)) return;
 
-export function initializeWhatsAppButton(buttonId, phoneNumber, message = '') {
-    const whatsappButton = document.getElementById(buttonId);
-    if (!whatsappButton) {
-        console.error(`Button with ID "${buttonId}" not found!`);
-        return;
-    }
+    const wrapper = document.createElement("div");
+    wrapper.id = buttonId;
+    wrapper.style.position = "fixed";
+    wrapper.style.bottom = "20px";
+    wrapper.style.right = "20px";
+    wrapper.style.zIndex = "9999";
+    wrapper.style.backgroundColor = bgColor;
+    wrapper.style.width = "60px";
+    wrapper.style.height = "60px";
+    wrapper.style.borderRadius = "50%";
+    wrapper.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
+    wrapper.style.display = "flex";
+    wrapper.style.alignItems = "center";
+    wrapper.style.justifyContent = "center";
+    wrapper.style.cursor = "pointer";
 
-    const img = document.createElement('img');
-    img.src = "https://freepnglogo.com/images/all_img/1716574719whatsapp-logo-transparent.png"
-    whatsappButton.style.color = '#fff';
-    whatsappButton.style.border = 'none';
-    whatsappButton.style.cursor = 'pointer';
-    img.style.width = "38px"
+    const img = document.createElement("img");
+    img.src = imgSrc;
+    img.alt = altText;
+    img.style.width = "32px";
+    img.style.height = "32px";
 
-    // Add logo to the button
-    whatsappButton.insertBefore(img, whatsappButton.firstChild);
+    wrapper.appendChild(img);
 
-    // Construct the WhatsApp URL
+    wrapper.onclick = () => {
+        window.open(url, "_blank", "noopener,noreferrer");
+    };
+
+    document.body.appendChild(wrapper);
+}
+
+export function initializeWhatsAppButton(buttonId = "whatsappButton", phoneNumber, message = "") {
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
-    // Add click functionality
-    whatsappButton.onclick = function () {
-        window.open(whatsappURL, '_blank');
-    };
+    createFloatingButton(
+        buttonId,
+        "https://freepnglogo.com/images/all_img/1716574719whatsapp-logo-transparent.png",
+        "Chat on WhatsApp",
+        whatsappURL,
+        "#25D366" // WhatsApp green
+    );
 }
-export function initializeMessengerButton(buttonId, pageName, message = "") {
-    const messengerButton = document.getElementById(buttonId)
-    if (!messengerButton) {
-        console.error(`Button with ID "${buttonId}" not found!`);
-        return;
-    }
-    const img = document.createElement('img')
-    img.src = "https://1000logos.net/wp-content/uploads/2021/11/Messenger-Logo-500x281.png"
-    messengerButton.style.color = '#fff';
-    messengerButton.style.border = 'none';
-    messengerButton.style.cursor = 'pointer';
-    img.style.width = "58px"
 
-    messengerButton.insertBefore(img, messengerButton.firstChild);
-
+export function initializeMessengerButton(buttonId = "messengerButton", pageName, message = "") {
     const messengerURL = `https://m.me/${pageName}?text=${encodeURIComponent(message)}`;
-
-    // Add click functionality
-    messengerButton.onclick = function () {
-        window.open(messengerURL, '_blank');
-    };
-
-
+    createFloatingButton(
+        buttonId,
+        "https://1000logos.net/wp-content/uploads/2021/11/Messenger-Logo-500x281.png",
+        "Chat on Messenger",
+        messengerURL,
+        "#0078FF" // Messenger blue
+    );
 }
-
