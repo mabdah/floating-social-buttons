@@ -27,24 +27,26 @@ function createFloatingButton(buttonId, imgSrc, altText, url, bgColor) {
     wrapper.appendChild(img);
 
     wrapper.onclick = () => {
-        window.open(url, "_blank", "noopener,noreferrer");
+        window.open(url, "_blank");
     };
 
     document.body.appendChild(wrapper);
 }
 
-export function initializeWhatsAppButton(buttonId = "whatsappButton", phoneNumber, message = "") {
+export function initializeWhatsAppButton(phoneNumber, message) {
+    const buttonId = "whatsappButton"
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     createFloatingButton(
         buttonId,
         "https://freepnglogo.com/images/all_img/1716574719whatsapp-logo-transparent.png",
         "Chat on WhatsApp",
         whatsappURL,
-        "#25D366" // WhatsApp green
+        "#23663c" // WhatsApp green
     );
 }
 
-export function initializeMessengerButton(buttonId = "messengerButton", pageName, message = "") {
+export function initializeMessengerButton(pageName, message) {
+    const buttonId = "messengerButton"
     const messengerURL = `https://m.me/${pageName}?text=${encodeURIComponent(message)}`;
     createFloatingButton(
         buttonId,
