@@ -37,7 +37,7 @@ function createFloatingButton(buttonId, imgSrc, altText, url, bgColor) {
     const img = document.createElement("img");
     img.src = imgSrc;
     img.alt = altText;
-    img.style.width = "100%";
+    img.style.maxWidth = "100%";
     img.style.height = "32px";
 
     wrapper.appendChild(img);
